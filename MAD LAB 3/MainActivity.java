@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener
 {
-    //Defining the Views
+    
     EditText Num1;
     EditText Num2;
     Button Add;
@@ -26,7 +26,7 @@ public void onCreate(Bundle savedInstanceState)
 super.onCreate(savedInstanceState);
 setContentView(R.layout.activity_main);
 
-        //Referring the Views
+       
         Num1 = (EditText) findViewById(R.id.editText1);
         Num2 = (EditText) findViewById(R.id.editText2);
         Add = (Button) findViewById(R.id.Add);
@@ -35,7 +35,7 @@ setContentView(R.layout.activity_main);
         Div = (Button) findViewById(R.id.Div);
         Result = (TextView) findViewById(R.id.textView);
 
-        // set a listener
+      
 Add.setOnClickListener(this);
 Sub.setOnClickListener(this);
 Mul.setOnClickListener(this);
@@ -51,16 +51,15 @@ floatnum2 = 0;
 floatresult = 0;
         String oper = "";
 
-        // check if the fields are empty
+       
 if(TextUtils.isEmpty(Num1.getText().toString()) || TextUtils.isEmpty(Num2.getText().toString()))
 return;
 
-        // read EditText and fill variables with numbers
+        
         num1 = Float.parseFloat(Num1.getText().toString());
         num2 = Float.parseFloat(Num2.getText().toString());
 
-        // defines the button that has been clicked and performs the corresponding operation
-        // write operation into oper, we will use it later for output
+        
 switch(v.getId()) 
         {
 CaseR.id.Add:
@@ -82,7 +81,7 @@ break;
 default:
 break;
         }
-        // form the output line
+      
 Result.setText(num1 + " "+ oper + " "+ num2 + " = "+ result);
     }
 }
